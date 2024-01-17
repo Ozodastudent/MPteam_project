@@ -4,6 +4,8 @@ import 'package:pinterestmobile/core/app_text_style.dart';
 
 showAlertDialog(
     BuildContext context, {
+      required String title,
+      required String buttonConfirmTitle,
       String? buttonCancelTitle,
       String? content,
       void Function()? onCancelPressed,
