@@ -124,4 +124,34 @@ class _$ImagesListDao extends ImagesListDao {
 
   final UpdateAdapter<ImagesListEntity> _imagesListEntityUpdateAdapter;
 
+    @override
+  Future<List<ImagesListEntity>?> allImagesList() async {
+    return _queryAdapter.queryList('SELECT * FROM ImagesListEntity',
+        mapper: (Map<String, Object?> row) => ImagesListEntity(
+            id: row['id'] as String,
+            imageUrl: row['imageUrl'] as String,
+            isSelected: (row['isSelected'] as int) != 0,
+            width: row['width'] as int,
+            height: row['height'] as int));
+  }
+
+  @override
+  Future<void> deleteById(String id) async {
+    await _queryAdapter.queryNoReturn(
+        'DELETE FROM ImagesListEntity WHERE id = ?1',
+        arguments: [id]);
+  }
+
+  @override
+  Future<void> insertImagesList(ImagesListEntity imageInsertEntity) async {
+    await _imagesListEntityInsertionAdapter.insert(
+        imageInsertEntity, OnConflictStrategy.abort);
+  }
+
+  @override
+  Future<void> updateImagesList(ImagesListEntity imageUpdateEntity) async {
+    await _imagesListEntityUpdateAdapter.update(
+        imageUpdateEntity, OnConflictStrategy.abort);
+  }
+
 }
