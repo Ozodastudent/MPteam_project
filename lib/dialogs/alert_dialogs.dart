@@ -4,8 +4,6 @@ import 'package:pinterestmobile/core/app_text_style.dart';
 
 showAlertDialog(
     BuildContext context, {
-      required String title,
-      required String buttonConfirmTitle,
       String? buttonCancelTitle,
       String? content,
       void Function()? onCancelPressed,
@@ -25,7 +23,7 @@ showAlertDialog(
       CupertinoDialogAction(
         isDefaultAction: true,
         onPressed: onConfirmPressed,
-        child: Text(buttonConfirmTitle, style: AppTextStyle.style500.copyWith(fontSize: 14, color: AppColors.primary)),
+        child: Text(buttonConfirmTitle, style: AppTextStyle.style500.copyWith(fontSize: 14, color: AppColors.primary)), 
       ),
     ],
   ),
