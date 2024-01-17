@@ -16,4 +16,19 @@ class ImagesListEntity {
     required this.width,
     required this.height
   });
+
+    factory ImagesListEntity.fromJson(Map<String, dynamic> json) => ImagesListEntity(
+      id: json["id"],
+      imageUrl: json['imageUrl'],
+    isSelected: json['isSelected'],
+    width: json['width'],
+    height: json['height']
+  );
+
+  Map<String, dynamic> toJson() => {
+    "id": id,
+    "imageUrl": imageUrl,
+    "isSelected": isSelected,
+  };
+  
 }
