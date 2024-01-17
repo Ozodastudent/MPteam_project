@@ -8,5 +8,10 @@ abstract class ImagesListDao {
 
   @insert
   Future<void> insertImagesList(ImagesListEntity imageInsertEntity);
-  
+
+  @update
+  Future<void> updateImagesList(ImagesListEntity imageUpdateEntity);
+
+  @Query('DELETE FROM ImagesListEntity WHERE id = :id')
+  Future<void> deleteById(String id);
 }
