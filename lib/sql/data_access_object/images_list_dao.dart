@@ -1,5 +1,5 @@
 import 'package:floor/floor.dart';
-import 'package:pinterestmobile/sql/entity/images_list_entity.dart';
+import 'package:MPteam_project/sql/entity/images_list_entity.dart';
 
 @dao
 abstract class ImagesListDao {
