@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lottie/lottie.dart';
-import 'package:pinterestmobile/core/app_colors.dart';
-import 'package:pinterestmobile/models/utils.dart';
-import 'package:pinterestmobile/pages/detail/detail_page.dart';
-import 'package:pinterestmobile/services/log_service.dart';
-import 'package:pinterestmobile/sql/entity/images_list_entity.dart';
-import 'package:pinterestmobile/view_models/home_view_model.dart';
+import 'package:mp_team_project/core/app_colors.dart';
+import 'package:mp_team_project/models/utils.dart';
+import 'package:mp_team_project/pages/detail/detail_page.dart';
+import 'package:mp_team_project/services/log_service.dart';
+import 'package:mp_team_project/sql/entity/images_list_entity.dart';
+import 'package:mp_team_project/view_models/home_view_model.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                 padding: const EdgeInsets.only(right: 10),
                 child: GestureDetector(
                     onTap: (){
-                        Log.i("Image download");
+                      Log.i("Image download");
                     },
                     child: const Text("Show", style: TextStyle(fontSize: 15, color: Colors.blue),)),
               ),
@@ -118,151 +118,151 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
             children: [
               viewModel.isLoading
                   ? Center(
-                      child: SizedBox(
-                          height: 40,
-                          width: 40,
-                          child: CircleAvatar(
-                              radius: 20,
-                              backgroundColor: Colors.grey.shade800,
-                              child: Lottie.asset("assets/anime/lf30_editor_naboxmse.json"))),
-                    )
+                child: SizedBox(
+                    height: 40,
+                    width: 40,
+                    child: CircleAvatar(
+                        radius: 20,
+                        backgroundColor: Colors.grey.shade800,
+                        child: Lottie.asset("assets/anime/lf30_editor_naboxmse.json"))),
+              )
                   : Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: Column(
-                        children: [
-                          Expanded(
-                            flex: viewModel.isLoadMore ? 15 : 1,
-                            child: MasonryGridView.builder(
-                              controller: viewModel.scrollController,
-                              mainAxisSpacing: 10,
-                              crossAxisSpacing: 10,
-                              gridDelegate: const SliverSimpleGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2,
-                              ),
-                              itemCount: viewModel.note.length,
-                              itemBuilder: (context, index) {
-                                return GestureDetector(
-                                    onTap: () {
-                                      Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context){
-                                        return DetailPage(indexImage: viewModel.note[index].urls!.small!);
-                                      }),
-                                      );
-                                    },
-                                    child: Column(
-                                      children: [
-                                        Stack(
-                                          children: [
-                                            SizedBox(
-                                              width: MediaQuery.of(context).size.width / 2,
-                                              child: ClipRRect(
-                                                  borderRadius: BorderRadius.circular(15.0),
-                                                  child: CachedNetworkImage(
-                                                    imageUrl: viewModel.note[index].urls!.small!,
-                                                    placeholder: (context, widget) => AspectRatio(
-                                                      aspectRatio: viewModel.note[index].width!/viewModel.note[index].height!,
-                                                      child: Container(
-                                                        decoration: BoxDecoration(
-                                                          borderRadius: BorderRadius.circular(15.0),
-                                                          color: UtilsColors(value: viewModel.note[index].color!).toColor(),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  )
-                                              ),
-                                            ),
-                                            Positioned(
-                                              top: 0,
-                                              right: 0,
-                                              child: IconButton(
-                                                icon: const Icon(Icons.save, color: AppColors.red),
-                                                onPressed: () async {
-                                                  await viewModel.saveImages(ImagesListEntity(
-                                                      id: DateTime.now().toString(),
-                                                      imageUrl: viewModel.note[index].urls!.small ?? "",
-                                                      isSelected: true,
-                                                    width: viewModel.note[index].width ?? 0,
-                                                    height: viewModel.note[index].width ?? 1,
-                                                  )).then((value) {
-                                                    Utils.showToast(context, "Image added to favorite");
-                                                  });
-                                                },
-                                                splashRadius: 25,
-                                              ),
-                                            )
-                                          ],
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.only(left: 5, right: 5, top: 5),
-                                          child: Row(
-                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                            crossAxisAlignment: CrossAxisAlignment.center,
-                                            children: [viewModel.note[index].altDescription == null
-                                                  ? Row(
-                                              mainAxisAlignment: MainAxisAlignment.start,
-                                                      children: [
-                                                        const Icon(Icons.favorite_rounded, color: Colors.red,
-                                                        ),
-                                                        const SizedBox(
-                                                          width: 5,
-                                                        ),
-                                                        Text(viewModel.note[index].likes.toString())
-                                                      ],
-                                                    )
-                                                  : SizedBox(
-                                                      width: MediaQuery.of(context).size.width / 2 - 60,
-                                                      child: viewModel.note[index].altDescription!.length > 50
-                                                          ? Text(
-                                                              viewModel.note[index].altDescription!, overflow: TextOverflow.ellipsis,
-                                                            )
-                                                          : Text(viewModel.note[index].altDescription!)),
-
-                                              IconButton(
-                                                onPressed: (){
-                                                  showModalBottomSheet(
-                                                      isScrollControlled: true,
-                                                      context: context,
-                                                      builder: (context) {
-                                                        return buildBottomSheet(context, index, viewModel);
-                                                      });
-                                                },
-                                                icon: const Icon(
-                                                  FontAwesomeIcons.ellipsisH,
-                                                  color: Colors.black,
-                                                  size: 15,
-                                                ),
-                                                splashRadius: 5,
-                                                padding: EdgeInsets.zero,
-                                                constraints: const BoxConstraints(),
-                                              )
-                                            ],
-                                          ),
-                                        )
-                                      ],
-                                    )
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: Column(
+                  children: [
+                    Expanded(
+                      flex: viewModel.isLoadMore ? 15 : 1,
+                      child: MasonryGridView.builder(
+                        controller: viewModel.scrollController,
+                        mainAxisSpacing: 10,
+                        crossAxisSpacing: 10,
+                        gridDelegate: const SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                        ),
+                        itemCount: viewModel.note.length,
+                        itemBuilder: (context, index) {
+                          return GestureDetector(
+                              onTap: () {
+                                Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context){
+                                  return DetailPage(indexImage: viewModel.note[index].urls!.small!);
+                                }),
                                 );
                               },
-                            ),
-                          ),
-
-                          viewModel.isLoadMore
-                              ? Expanded(
-                                  flex: 3,
-                                  child: Container(
-                                    alignment: Alignment.topCenter,
-                                    color: Colors.transparent,
-                                    child: SizedBox(
-                                        height: 40,
-                                        width: 40,
-                                        child: CircleAvatar(
-                                            radius: 20,
-                                            backgroundColor: Colors.grey.shade800,
-                                            child: Lottie.asset("assets/anime/lf30_editor_naboxmse.json"))),
+                              child: Column(
+                                children: [
+                                  Stack(
+                                    children: [
+                                      SizedBox(
+                                        width: MediaQuery.of(context).size.width / 2,
+                                        child: ClipRRect(
+                                            borderRadius: BorderRadius.circular(15.0),
+                                            child: CachedNetworkImage(
+                                              imageUrl: viewModel.note[index].urls!.small!,
+                                              placeholder: (context, widget) => AspectRatio(
+                                                aspectRatio: viewModel.note[index].width!/viewModel.note[index].height!,
+                                                child: Container(
+                                                  decoration: BoxDecoration(
+                                                    borderRadius: BorderRadius.circular(15.0),
+                                                    color: UtilsColors(value: viewModel.note[index].color!).toColor(),
+                                                  ),
+                                                ),
+                                              ),
+                                            )
+                                        ),
+                                      ),
+                                      Positioned(
+                                        top: 0,
+                                        right: 0,
+                                        child: IconButton(
+                                          icon: const Icon(Icons.save, color: AppColors.red),
+                                          onPressed: () async {
+                                            await viewModel.saveImages(ImagesListEntity(
+                                              id: DateTime.now().toString(),
+                                              imageUrl: viewModel.note[index].urls!.small ?? "",
+                                              isSelected: true,
+                                              width: viewModel.note[index].width ?? 0,
+                                              height: viewModel.note[index].width ?? 1,
+                                            )).then((value) {
+                                              Utils.showToast(context, "Image added to favorite");
+                                            });
+                                          },
+                                          splashRadius: 25,
+                                        ),
+                                      )
+                                    ],
                                   ),
-                                )
-                              : const SizedBox.shrink()
-                        ],
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 5, right: 5, top: 5),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                      children: [viewModel.note[index].altDescription == null
+                                          ? Row(
+                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        children: [
+                                          const Icon(Icons.favorite_rounded, color: Colors.red,
+                                          ),
+                                          const SizedBox(
+                                            width: 5,
+                                          ),
+                                          Text(viewModel.note[index].likes.toString())
+                                        ],
+                                      )
+                                          : SizedBox(
+                                          width: MediaQuery.of(context).size.width / 2 - 60,
+                                          child: viewModel.note[index].altDescription!.length > 50
+                                              ? Text(
+                                            viewModel.note[index].altDescription!, overflow: TextOverflow.ellipsis,
+                                          )
+                                              : Text(viewModel.note[index].altDescription!)),
+
+                                        IconButton(
+                                          onPressed: (){
+                                            showModalBottomSheet(
+                                                isScrollControlled: true,
+                                                context: context,
+                                                builder: (context) {
+                                                  return buildBottomSheet(context, index, viewModel);
+                                                });
+                                          },
+                                          icon: const Icon(
+                                            FontAwesomeIcons.ellipsisH,
+                                            color: Colors.black,
+                                            size: 15,
+                                          ),
+                                          splashRadius: 5,
+                                          padding: EdgeInsets.zero,
+                                          constraints: const BoxConstraints(),
+                                        )
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              )
+                          );
+                        },
                       ),
                     ),
+
+                    viewModel.isLoadMore
+                        ? Expanded(
+                      flex: 3,
+                      child: Container(
+                        alignment: Alignment.topCenter,
+                        color: Colors.transparent,
+                        child: SizedBox(
+                            height: 40,
+                            width: 40,
+                            child: CircleAvatar(
+                                radius: 20,
+                                backgroundColor: Colors.grey.shade800,
+                                child: Lottie.asset("assets/anime/lf30_editor_naboxmse.json"))),
+                      ),
+                    )
+                        : const SizedBox.shrink()
+                  ],
+                ),
+              ),
             ],
           ),
         ),

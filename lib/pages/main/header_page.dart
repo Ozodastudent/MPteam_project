@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:pinterestmobile/core/app_colors.dart';
-import 'package:pinterestmobile/core/app_text_style.dart';
-import 'package:pinterestmobile/pages/main/account_page.dart';
-import 'package:pinterestmobile/pages/main/comment_page.dart';
-import 'package:pinterestmobile/pages/main/home_page.dart';
-import 'package:pinterestmobile/pages/main/search_page.dart';
-import 'package:pinterestmobile/view_models/header_view_model.dart';
-import 'package:pinterestmobile/widgets/custom_pictures.dart';
+import 'package:mp_team_project/core/app_colors.dart';
+import 'package:mp_team_project/core/app_text_style.dart';
+import 'package:mp_team_project/pages/main/account_page.dart';
+import 'package:mp_team_project/pages/main/comment_page.dart';
+import 'package:mp_team_project/pages/main/home_page.dart';
+import 'package:mp_team_project/pages/main/search_page.dart';
+import 'package:mp_team_project/view_models/header_view_model.dart';
+import 'package:mp_team_project/widgets/custom_pictures.dart';
 import 'package:provider/provider.dart';
 
 class HeaderPage extends StatefulWidget {

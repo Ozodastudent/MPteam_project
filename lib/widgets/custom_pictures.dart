@@ -4,10 +4,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 class CustomPictures {
   const CustomPictures._();
 
-    static SvgPicture icChatSmile = SvgPicture.asset("assets/icons/chat_smile.svg");
-    static SvgPicture icHome = SvgPicture.asset("assets/icons/home.svg");
-    static SvgPicture icSearch = SvgPicture.asset("assets/icons/search.svg");
-    static SvgPicture icProfile= SvgPicture.asset("assets/icons/profile.svg");
+  static SvgPicture icChatSmile = SvgPicture.asset("assets/icons/chat_smile.svg");
+  static SvgPicture icHome = SvgPicture.asset("assets/icons/home.svg");
+  static SvgPicture icSearch = SvgPicture.asset("assets/icons/search.svg");
+  static SvgPicture icProfile= SvgPicture.asset("assets/icons/profile.svg");
 
 }
 

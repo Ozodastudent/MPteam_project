@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lottie/lottie.dart';
-import 'package:pinterestmobile/models/utils.dart';
-import 'package:pinterestmobile/pages/detail/detail_page.dart';
-import 'package:pinterestmobile/services/log_service.dart';
-import 'package:pinterestmobile/view_models/search_photo_view_model.dart';
+import 'package:mp_team_project/models/utils.dart';
+import 'package:mp_team_project/pages/detail/detail_page.dart';
+import 'package:mp_team_project/services/log_service.dart';
+import 'package:mp_team_project/view_models/search_photo_view_model.dart';
 import 'package:provider/provider.dart';
 
 
@@ -22,7 +22,7 @@ class SearchPhoto extends StatefulWidget {
 
 class _SearchPhotoState extends State<SearchPhoto> with SingleTickerProviderStateMixin {
   SearchPhotoViewModel viewModel = SearchPhotoViewModel();
-  
+
   @override
   void initState() {
     // TODO: implement initState
@@ -41,7 +41,7 @@ class _SearchPhotoState extends State<SearchPhoto> with SingleTickerProviderStat
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-        create: (context) => viewModel,
+      create: (context) => viewModel,
       child: Consumer<SearchPhotoViewModel>(
         builder: (ctx, viewModel, widget) => Scaffold(
           extendBodyBehindAppBar: true,
@@ -130,77 +130,77 @@ class _SearchPhotoState extends State<SearchPhoto> with SingleTickerProviderStat
 
   GestureDetector viewOfSearchPhoto(BuildContext context, int index) {
     return GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context){
-                        return DetailPage(indexImage: viewModel.note[index].urls!.small!);
-                      })
-                      );
-                    },
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width / 2,
-                          child: ClipRRect(
-                              borderRadius: BorderRadius.circular(15.0),
-                              child: CachedNetworkImage(
-                                imageUrl: viewModel.note[index].urls!.small!,
-                                placeholder: (context, widget) => AspectRatio(
-                                  aspectRatio: viewModel.note[index].width!/viewModel.note[index].height!,
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(15.0),
-                                      color: UtilsColors(value: viewModel.note[index].color!).toColor(),
-                                    ),
-                                  ),
-                                ),
-                              )
-                          ),
+        onTap: () {
+          Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context){
+            return DetailPage(indexImage: viewModel.note[index].urls!.small!);
+          })
+          );
+        },
+        child: Column(
+          children: [
+            SizedBox(
+              width: MediaQuery.of(context).size.width / 2,
+              child: ClipRRect(
+                  borderRadius: BorderRadius.circular(15.0),
+                  child: CachedNetworkImage(
+                    imageUrl: viewModel.note[index].urls!.small!,
+                    placeholder: (context, widget) => AspectRatio(
+                      aspectRatio: viewModel.note[index].width!/viewModel.note[index].height!,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15.0),
+                          color: UtilsColors(value: viewModel.note[index].color!).toColor(),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 5, right: 5, top: 5),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [viewModel.note[index].altDescription == null
-                                ? Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                const Icon(Icons.favorite_rounded, color: Colors.red,
-                                ),
-                                const SizedBox(
-                                  width: 5,
-                                ),
-                                Text(viewModel.note[index].likes.toString())
-                              ],
-                            )
-                                : SizedBox(
-                                width: MediaQuery.of(context).size.width / 2 - 60,
-                                child: viewModel.note[index].altDescription!.length > 50
-                                    ? Text(
-                                  viewModel.note[index].altDescription!, overflow: TextOverflow.ellipsis,
-                                )
-                                    : Text(viewModel.note[index].altDescription!)),
-                              GestureDetector(
-                                  onTap: () {
-                                    showModalBottomSheet(
-                                        isScrollControlled: true,
-                                        context: context,
-                                        builder: (context) {
-                                          return buildBottomSheet(
-                                              context);
-                                        });
-                                  },
-                                  child: const Icon(
-                                    FontAwesomeIcons.ellipsisH,
-                                    color: Colors.black,
-                                    size: 15,
-                                  ))
-                            ],
-                          ),
-                        )
-                      ],
+                      ),
+                    ),
+                  )
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 5, right: 5, top: 5),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [viewModel.note[index].altDescription == null
+                    ? Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    const Icon(Icons.favorite_rounded, color: Colors.red,
+                    ),
+                    const SizedBox(
+                      width: 5,
+                    ),
+                    Text(viewModel.note[index].likes.toString())
+                  ],
+                )
+                    : SizedBox(
+                    width: MediaQuery.of(context).size.width / 2 - 60,
+                    child: viewModel.note[index].altDescription!.length > 50
+                        ? Text(
+                      viewModel.note[index].altDescription!, overflow: TextOverflow.ellipsis,
                     )
-                );
+                        : Text(viewModel.note[index].altDescription!)),
+                  GestureDetector(
+                      onTap: () {
+                        showModalBottomSheet(
+                            isScrollControlled: true,
+                            context: context,
+                            builder: (context) {
+                              return buildBottomSheet(
+                                  context);
+                            });
+                      },
+                      child: const Icon(
+                        FontAwesomeIcons.ellipsisH,
+                        color: Colors.black,
+                        size: 15,
+                      ))
+                ],
+              ),
+            )
+          ],
+        )
+    );
   }
 
   SizedBox buildBottomSheet(BuildContext context) {
@@ -362,7 +362,7 @@ class _SearchPhotoState extends State<SearchPhoto> with SingleTickerProviderStat
               padding: const EdgeInsets.only(left: 20),
               child: GestureDetector(
                   onTap: () {
-                      Log.i("Download Image");
+                    Log.i("Download Image");
                   },
                   child: const Text(
                     "Download Image",
@@ -382,7 +382,7 @@ class _SearchPhotoState extends State<SearchPhoto> with SingleTickerProviderStat
               padding: const EdgeInsets.only(left: 20),
               child: GestureDetector(
                   onTap: () {
-                      Log.i("Hide Pin");
+                    Log.i("Hide Pin");
                   },
                   child: const Text(
                     "Hide Pin",
@@ -402,7 +402,7 @@ class _SearchPhotoState extends State<SearchPhoto> with SingleTickerProviderStat
               padding: const EdgeInsets.only(left: 20),
               child: GestureDetector(
                   onTap: () {
-                      Log.i("Report Pin");
+                    Log.i("Report Pin");
                   },
                   child: const Text(
                     "Report Pin",
@@ -422,9 +422,9 @@ class _SearchPhotoState extends State<SearchPhoto> with SingleTickerProviderStat
               padding: const EdgeInsets.only(left: 20),
               child: GestureDetector(
                   onTap: () {
-                    
-                      Log.i("Report Pin");
-                    
+
+                    Log.i("Report Pin");
+
                   },
                   child: Text(
                     "This goes against Pinterest's community guidelines",

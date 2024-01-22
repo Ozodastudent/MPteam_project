@@ -1,13 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:pinterestmobile/core/app_colors.dart';
-import 'package:pinterestmobile/models/utils.dart';
-import 'package:pinterestmobile/pages/auth/sign_up_page.dart';
-import 'package:pinterestmobile/pages/main/header_page.dart';
-import 'package:pinterestmobile/pages/views/validate_textField.dart';
-import 'package:pinterestmobile/services/auth_service.dart';
-import 'package:pinterestmobile/services/pref_service.dart';
-import 'package:pinterestmobile/widgets/glassmorphism_widget.dart';
+import 'package:mp_team_project/core/app_colors.dart';
+import 'package:mp_team_project/models/utils.dart';
+import 'package:mp_team_project/pages/auth/sign_up_page.dart';
+import 'package:mp_team_project/pages/main/header_page.dart';
+import 'package:mp_team_project/pages/views/validate_textField.dart';
+import 'package:mp_team_project/services/auth_service.dart';
+import 'package:mp_team_project/services/pref_service.dart';
+import 'package:mp_team_project/widgets/glassmorphism_widget.dart';
 
 class SignInPage extends StatefulWidget {
   static const String id = "sign_in_page";
@@ -74,14 +74,14 @@ class _SignInPageState extends State<SignInPage> with InputValidation {
         children: [
           Container(
             decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.centerLeft,
-                end: Alignment.centerRight,
-                colors: [
-                  Color.fromRGBO(225, 48, 110, 1.0),
-                  Color.fromRGBO(255, 0, 71, 1)
-                ]
-              )
+                gradient: LinearGradient(
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                    colors: [
+                      Color.fromRGBO(225, 48, 110, 1.0),
+                      Color.fromRGBO(255, 0, 71, 1)
+                    ]
+                )
             ),
             child: Form(
               key: formGlobalKey,

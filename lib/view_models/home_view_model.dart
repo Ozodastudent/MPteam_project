@@ -4,11 +4,11 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:pinterestmobile/models/pinterest_model.dart';
-import 'package:pinterestmobile/services/http_service.dart';
-import 'package:pinterestmobile/services/log_service.dart';
-import 'package:pinterestmobile/sql/app_database.dart';
-import 'package:pinterestmobile/sql/entity/images_list_entity.dart';
+import 'package:mp_team_project/models/pinterest_model.dart';
+import 'package:mp_team_project/services/http_service.dart';
+import 'package:mp_team_project/services/log_service.dart';
+import 'package:mp_team_project/sql/app_database.dart';
+import 'package:mp_team_project/sql/entity/images_list_entity.dart';
 
 class HomeViewModel extends ChangeNotifier {
   late TabController tabController;

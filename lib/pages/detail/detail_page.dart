@@ -2,9 +2,9 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:pinterestmobile/models/utils.dart';
-import 'package:pinterestmobile/services/log_service.dart';
-import 'package:pinterestmobile/view_models/detail_view_model.dart';
+import 'package:mp_team_project/models/utils.dart';
+import 'package:mp_team_project/services/log_service.dart';
+import 'package:mp_team_project/view_models/detail_view_model.dart';
 import 'package:provider/provider.dart';
 
 class DetailPage extends StatefulWidget {

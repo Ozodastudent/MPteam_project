@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:pinterestmobile/core/app_colors.dart';
-import 'package:pinterestmobile/core/app_text_style.dart';
+import 'package:mp_team_project/core/app_colors.dart';
+import 'package:mp_team_project/core/app_text_style.dart';
 
 showAlertDialog(
     BuildContext context, {

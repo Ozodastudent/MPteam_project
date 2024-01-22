@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pinterestmobile/models/pinterest_model.dart';
-import 'package:pinterestmobile/services/http_service.dart';
+import 'package:mp_team_project/models/pinterest_model.dart';
+import 'package:mp_team_project/services/http_service.dart';
 
 class DetailViewModel extends ChangeNotifier {
   final ScrollController scrollController = ScrollController();

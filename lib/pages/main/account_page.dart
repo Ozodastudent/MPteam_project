@@ -2,11 +2,11 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:pinterestmobile/core/app_colors.dart';
-import 'package:pinterestmobile/core/app_text_style.dart';
-import 'package:pinterestmobile/dialogs/alert_dialogs.dart';
-import 'package:pinterestmobile/services/auth_service.dart';
-import 'package:pinterestmobile/view_models/account_view_model.dart';
+import 'package:mp_team_project/core/app_colors.dart';
+import 'package:mp_team_project/core/app_text_style.dart';
+import 'package:mp_team_project/dialogs/alert_dialogs.dart';
+import 'package:mp_team_project/services/auth_service.dart';
+import 'package:mp_team_project/view_models/account_view_model.dart';
 import 'package:provider/provider.dart';
 
 class AccountPage extends StatefulWidget {

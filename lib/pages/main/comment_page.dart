@@ -2,8 +2,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:pinterestmobile/models/utils.dart';
-import 'package:pinterestmobile/view_models/comment_view_model.dart';
+import 'package:mp_team_project/models/utils.dart';
+import 'package:mp_team_project/view_models/comment_view_model.dart';
 import 'package:provider/provider.dart';
 
 class CommentPage extends StatefulWidget {
@@ -16,7 +16,7 @@ class CommentPage extends StatefulWidget {
 
 class _CommentPageState extends State<CommentPage>{
   CommentViewModel viewModel = CommentViewModel();
-  
+
   @override
   void initState() {
     // TODO: implement initState
@@ -46,7 +46,7 @@ class _CommentPageState extends State<CommentPage>{
                           padding: const EdgeInsets.symmetric(horizontal: 26),
                           child: TabBar(
                             onTap: (int index){
-                                viewModel.tabControl(index);
+                              viewModel.tabControl(index);
                             },
                             indicatorSize: TabBarIndicatorSize.label,
                             labelColor: Colors.white,
@@ -336,7 +336,7 @@ class _CommentPageState extends State<CommentPage>{
     );
   }
 
-  // Widget imageContainer(){
-  //   return
-  // }
+// Widget imageContainer(){
+//   return
+// }
 }

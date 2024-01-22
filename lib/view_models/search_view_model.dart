@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pinterestmobile/models/pinterest_model.dart';
-import 'package:pinterestmobile/pages/search/search_photo_page.dart';
-import 'package:pinterestmobile/services/http_service.dart';
-import 'package:pinterestmobile/services/log_service.dart';
+import 'package:mp_team_project/models/pinterest_model.dart';
+import 'package:mp_team_project/pages/search/search_photo_page.dart';
+import 'package:mp_team_project/services/http_service.dart';
+import 'package:mp_team_project/services/log_service.dart';
 
 class SearchViewModel extends ChangeNotifier {
   TextEditingController textEditingController = TextEditingController();

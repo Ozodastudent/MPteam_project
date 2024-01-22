@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:pinterestmobile/models/user_model.dart';
-import 'package:pinterestmobile/services/pref_service.dart';
+import 'package:mp_team_project/models/user_model.dart';
+import 'package:mp_team_project/services/pref_service.dart';
 
 class DataService {
 

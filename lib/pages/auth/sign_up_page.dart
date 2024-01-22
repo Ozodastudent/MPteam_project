@@ -1,15 +1,15 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:pinterestmobile/core/app_colors.dart';
-import 'package:pinterestmobile/models/user_model.dart';
-import 'package:pinterestmobile/models/utils.dart';
-import 'package:pinterestmobile/pages/auth/sign_in_page.dart';
-import 'package:pinterestmobile/pages/main/header_page.dart';
-import 'package:pinterestmobile/pages/views/validate_textField.dart';
-import 'package:pinterestmobile/services/auth_service.dart';
-import 'package:pinterestmobile/services/data_service.dart';
-import 'package:pinterestmobile/services/pref_service.dart';
-import 'package:pinterestmobile/widgets/glassmorphism_widget.dart';
+import 'package:mp_team_project/core/app_colors.dart';
+import 'package:mp_team_project/models/user_model.dart';
+import 'package:mp_team_project/models/utils.dart';
+import 'package:mp_team_project/pages/auth/sign_in_page.dart';
+import 'package:mp_team_project/pages/main/header_page.dart';
+import 'package:mp_team_project/pages/views/validate_textField.dart';
+import 'package:mp_team_project/services/auth_service.dart';
+import 'package:mp_team_project/services/data_service.dart';
+import 'package:mp_team_project/services/pref_service.dart';
+import 'package:mp_team_project/widgets/glassmorphism_widget.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);

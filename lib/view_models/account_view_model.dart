@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pinterestmobile/models/user_model.dart';
-import 'package:pinterestmobile/services/data_service.dart';
-import 'package:pinterestmobile/sql/app_database.dart';
-import 'package:pinterestmobile/sql/entity/images_list_entity.dart';
+import 'package:mp_team_project/models/user_model.dart';
+import 'package:mp_team_project/services/data_service.dart';
+import 'package:mp_team_project/sql/app_database.dart';
+import 'package:mp_team_project/sql/entity/images_list_entity.dart';
 
 class AccountViewModel extends ChangeNotifier {
   Object object = Object();

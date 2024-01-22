@@ -2,9 +2,9 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:pinterestmobile/models/utils.dart';
-import 'package:pinterestmobile/pages/detail/detail_page.dart';
-import 'package:pinterestmobile/view_models/search_view_model.dart';
+import 'package:mp_team_project/models/utils.dart';
+import 'package:mp_team_project/pages/detail/detail_page.dart';
+import 'package:mp_team_project/view_models/search_view_model.dart';
 import 'package:provider/provider.dart';
 
 class SearchPage extends StatefulWidget {
@@ -114,7 +114,7 @@ class _SearchPageState extends State<SearchPage> {
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context){
                       return DetailPage(indexImage: viewModel.spotLightRandom[viewModel.spotLightRandom.length - 1].urls!.small!);
-                      })
+                    })
                     );
                   },
                   child: Container(
@@ -163,62 +163,62 @@ class _SearchPageState extends State<SearchPage> {
         itemBuilder: (context, index){
           if (viewModel.listViewRandom.length != index) {
             return Stack(
-            children: [
-              Container(
-                margin: index != viewModel.listViewRandom.length - 1 ? const EdgeInsets.only(left: 7) : const EdgeInsets.only(left: 7, right: 7),
-                width: MediaQuery.of(context).size.width / 3,
-                height: MediaQuery.of(context).size.height / 3 - 20,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12.0),
-                ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(12.0),
-                  child: CachedNetworkImage(
-                    imageUrl: viewModel.listViewRandom[index].urls!.regular!,
-                    fit: BoxFit.cover,
-                    placeholder: (context, url) => Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15.0),
-                        color: UtilsColors(value: viewModel.listViewRandom[index].color!).toColor(),
+              children: [
+                Container(
+                  margin: index != viewModel.listViewRandom.length - 1 ? const EdgeInsets.only(left: 7) : const EdgeInsets.only(left: 7, right: 7),
+                  width: MediaQuery.of(context).size.width / 3,
+                  height: MediaQuery.of(context).size.height / 3 - 20,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(12.0),
+                    child: CachedNetworkImage(
+                      imageUrl: viewModel.listViewRandom[index].urls!.regular!,
+                      fit: BoxFit.cover,
+                      placeholder: (context, url) => Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15.0),
+                          color: UtilsColors(value: viewModel.listViewRandom[index].color!).toColor(),
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              Positioned(
-                bottom: 0,
-                left: MediaQuery.of(context).size.width / 6 - 10.5,
-                child: CircleAvatar(
-                  radius: 20,
-                  backgroundColor: Colors.white,
-                  child: viewModel.listViewRandom[index].user?.profileImage?.large != null ? CircleAvatar(
-                    radius: 19,
-                    foregroundImage: NetworkImage(viewModel.listViewRandom[index].user!.profileImage!.large!),
-                  ) : const CircleAvatar(
-                    radius: 19,
-                    foregroundImage: NetworkImage("https://www.pngitem.com/pimgs/m/35-350426_profile-icon-png-default-profile-picture-png-transparent.png"),
+                Positioned(
+                  bottom: 0,
+                  left: MediaQuery.of(context).size.width / 6 - 10.5,
+                  child: CircleAvatar(
+                    radius: 20,
+                    backgroundColor: Colors.white,
+                    child: viewModel.listViewRandom[index].user?.profileImage?.large != null ? CircleAvatar(
+                      radius: 19,
+                      foregroundImage: NetworkImage(viewModel.listViewRandom[index].user!.profileImage!.large!),
+                    ) : const CircleAvatar(
+                      radius: 19,
+                      foregroundImage: NetworkImage("https://www.pngitem.com/pimgs/m/35-350426_profile-icon-png-default-profile-picture-png-transparent.png"),
+                    ),
                   ),
-                ),
-              )
-            ],
-          );
+                )
+              ],
+            );
           } else {
             return Container(
-            margin: const EdgeInsets.only(right: 7),
-            width: MediaQuery.of(context).size.width / 3,
-            height: 60,
-            child: Center(
-              child: MaterialButton(
-                elevation: 0,
-                onPressed: (){},
-                height: 60,
-                minWidth: MediaQuery.of(context).size.width / 3 - 20,
-                shape: const StadiumBorder(),
-                color: Colors.grey.withOpacity(0.3),
-                child: const Text("View all", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: Colors.black),),
+              margin: const EdgeInsets.only(right: 7),
+              width: MediaQuery.of(context).size.width / 3,
+              height: 60,
+              child: Center(
+                child: MaterialButton(
+                  elevation: 0,
+                  onPressed: (){},
+                  height: 60,
+                  minWidth: MediaQuery.of(context).size.width / 3 - 20,
+                  shape: const StadiumBorder(),
+                  color: Colors.grey.withOpacity(0.3),
+                  child: const Text("View all", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: Colors.black),),
+                ),
               ),
-            ),
-          );
+            );
           }
         },
       ),
@@ -274,15 +274,15 @@ class _SearchPageState extends State<SearchPage> {
                       width: MediaQuery.of(context).size.width/2-10.5,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15.0),
-                        gradient: LinearGradient(
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          colors: [
-                            Colors.black.withOpacity(0.5),
-                            Colors.black.withOpacity(0.5),
-                          ]
-                        )
+                          borderRadius: BorderRadius.circular(15.0),
+                          gradient: LinearGradient(
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                              colors: [
+                                Colors.black.withOpacity(0.5),
+                                Colors.black.withOpacity(0.5),
+                              ]
+                          )
                       ),
                       child: Text(viewModel.gridViewRandom[index].user?.lastName != null ? viewModel.gridViewRandom[index].user!.lastName : "Open image", style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 16, color: Colors.white),),
                     )

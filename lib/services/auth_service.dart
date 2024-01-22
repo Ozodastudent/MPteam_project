@@ -1,9 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:pinterestmobile/models/user_model.dart';
-import 'package:pinterestmobile/models/utils.dart';
-import 'package:pinterestmobile/pages/auth/sign_in_page.dart';
-import 'package:pinterestmobile/services/pref_service.dart';
+import 'package:mp_team_project/models/user_model.dart';
+import 'package:mp_team_project/models/utils.dart';
+import 'package:mp_team_project/pages/auth/sign_in_page.dart';
+import 'package:mp_team_project/services/pref_service.dart';
 
 
 class AuthService {
