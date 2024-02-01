@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mp_team_project/models/pinterest_model.dart';
+import 'package:mp_team_project/models/photoidea_model.dart';
 import 'package:mp_team_project/services/http_service.dart';
 
 class DetailViewModel extends ChangeNotifier {

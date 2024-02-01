@@ -101,7 +101,7 @@ class _SignUpPageState extends State<SignUpPage> with InputValidation {
 
                       // #text
                       const Text(
-                        'Pinterest',
+                        'Photoidea',
                         style: TextStyle(fontFamily: 'Billabong', fontSize: 25, color: AppColors.white),),
 
                       const SizedBox(

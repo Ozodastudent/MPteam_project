@@ -96,7 +96,7 @@ class _SignInPageState extends State<SignInPage> with InputValidation {
                       children: [
 
                         // #text
-                        const Text('Pinterest', style: TextStyle(fontFamily: 'Billabong', fontSize: 25, color: AppColors.white),),
+                        const Text('Photoidea', style: TextStyle(fontFamily: 'Billabong', fontSize: 25, color: AppColors.white),),
 
                         const SizedBox(
                           height: 25,

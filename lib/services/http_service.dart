@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart';
-import 'package:mp_team_project/models/pinterest_model.dart';
+import 'package:mp_team_project/models/photoidea_model.dart';
 import 'log_service.dart';
 
 class HttpService {

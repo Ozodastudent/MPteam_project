@@ -5,7 +5,6 @@ import 'package:mp_team_project/pages/main/home_page.dart';
 import 'package:mp_team_project/pages/main/header_page.dart';
 import 'package:mp_team_project/pages/main/search_page.dart';
 import 'package:mp_team_project/pages/splash/splash_page.dart';
-
 import 'pages/auth/sign_in_page.dart';
 import 'pages/auth/sign_up_page.dart';
 

@@ -153,7 +153,7 @@ class _AccountPageState extends State<AccountPage> {
                                       SizedBox(
                                         width: 7,
                                       ),
-                                      Text("Search your Pins", style: TextStyle(fontWeight: FontWeight.w600, color: Colors.black54),),
+                                      Text("Search your photos", style: TextStyle(fontWeight: FontWeight.w600, color: Colors.black54),),
                                     ],
                                   )
                               ),

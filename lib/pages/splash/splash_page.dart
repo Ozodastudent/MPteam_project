@@ -52,10 +52,13 @@ class _SplashPageState extends State<SplashPage> {
         alignment: Alignment.center,
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        child: Image(
-          image: const AssetImage('assets/images/im_pinterest.png'),
-          height: MediaQuery.of(context).size.width * 0.2,
-          width: MediaQuery.of(context).size.width * 0.2,
+        child: ClipOval( // 'child' property added here
+          child: Image(
+            image: const AssetImage('assets/images/logo1.PNG'),
+            height: MediaQuery.of(context).size.width * 0.5,
+            width: MediaQuery.of(context).size.width * 0.5,
+            fit: BoxFit.cover, // Ensures the image covers the clip area
+          ),
         ),
       ),
     );

@@ -4,7 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:mp_team_project/models/pinterest_model.dart';
+import 'package:mp_team_project/models/photoidea_model.dart';
 import 'package:mp_team_project/services/http_service.dart';
 import 'package:mp_team_project/services/log_service.dart';
 import 'package:mp_team_project/sql/app_database.dart';
